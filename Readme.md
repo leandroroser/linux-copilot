@@ -28,11 +28,15 @@ cd linux-copilot
 make init
 ```
 
-4. Add a .env file in the api directory with your openai key:
+4. Edit the template.env file in the api directory and move it to .env:
 ```sh
-OPENAI_API_KEY=YOUR_KEY_HERE
+nano api/template.env
+# edit the file here, it has in addition to the key you should add, two other parameters"
+# OPENAI_API_KEY=
+# MAX_TOKENS=500
+# TEMPERATURE=0.7
+mv api/template.env api/.env
 ```
-
 
 ## Usage
 
