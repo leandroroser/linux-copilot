@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
 function print_executable() {
-  read -p $'Press enter to run or \'q\' to exit: \n\e[1;35m>'"$1 "$'\e[0m ' input
-  if [[ "$input" == "q" ]]; then
+  echo -e "\e[1;35mPress enter to run or 'q' to exit\e[0m"
+  read -e -i "$1" -p ">> " command
+
+  if [[ "$command" == "q" ]]; then
     echo $'\e[1;35mExiting...\e[0m'
     exit 0
   fi
 
-  if [[ -z "$input" ]]; then
-    $1
+  if [[ -n "$command" ]]; then
+    eval "$command"
   else
-  echo $'\e[1;35mInvalid input. Exiting...\e[0m'
-fi
+    echo $'\e[1;35mInvalid input. Exiting...\e[0m'
+  fi
 }
 
 
@@ -27,9 +29,9 @@ function dummy_chat() {
 
 
 function eval_loop() {
-  echo "Hey, what can I help you with today?"
+  echo -e "\e[1;35mHey, what can I help you with today?\e[0m"
   while true; do
-    read -r -p $'Write your question or press \'q\' to exit\n\e[1;35m>\e[0m ' -e input
+    read -r -p $'Write your question or press \'q\' to exit\n\e[1;32m>\e[0m ' -e input
     echo Your input is: $input
     if [[ $input == "q" ]]; then
       echo $'\e[1;35mExiting...\e[0m'
