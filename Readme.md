@@ -56,14 +56,9 @@ make stop
 ./chat.sh
 ```
 
-
-
 This will launch the interactive chat interface. Ask questions about Linux commands, and Linux Copilot will provide real-time suggestions and answers.
 
-![screenshot](https://github.com/leandroroser/linux-copilot/assets/10769732/671f0fa9-ef67-40b9-9e9c-0ac63420d33b)
-
-
-Contributions are welcome! Feel free to fork the repository and submit pull requests.This is an ongoing project.
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
 
 ---
 Please refer to the [License](LICENSE) file for license information.
