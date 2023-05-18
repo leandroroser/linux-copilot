@@ -1,6 +1,9 @@
 # Linux Copilot
 
 Linux Copilot is a command line tool for Linux that allows users to generate Linux editable commands using GPT-3 that can be run on the fly as a regular command in the same terminal, without fancy UI, just pure Linux!
+
+An interesting feature of this terminal is that it acts as auto-complete, allowing not only to make question but to **edit the responses and run them**.
+
 ## Prerequisites
 
 Before using Linux Copilot, ensure that you have the following prerequisites installed on your Linux system:
