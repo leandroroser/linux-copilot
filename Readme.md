@@ -28,6 +28,12 @@ cd linux-copilot
 make init
 ```
 
+4. Add a .env file in the api directory with your openai key:
+```sh
+OPENAI_API_KEY=YOUR_KEY_HERE
+```
+
+
 ## Usage
 
 1. Start the Linux Copilot API server:
