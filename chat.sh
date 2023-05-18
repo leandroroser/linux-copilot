@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function print_executable() {
-  read -r -n 1 -p $'Press enter to run or \'q\' to exit: \n\e[1;35m>'"$1 "$'\e[0m ' input
+  read -p $'Press enter to run or \'q\' to exit: \n\e[1;35m>'"$1 "$'\e[0m ' input
   if [[ "$input" == "q" ]]; then
     echo $'\e[1;35mExiting...\e[0m'
     exit 0
