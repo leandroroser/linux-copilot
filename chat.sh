@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
 if [ -n "$ZSH_VERSION" ]; then
-    exec zsh -c ". base.sh && eval_loop"
+    zsh -c '. base.sh'
 elif [ -n "$BASH_VERSION" ]; then
-    exec bash -c ". base.sh && eval_loop"
+    bash -c '. base.sh'
 else
     echo "Unsupported default shell." >&2
     exit 1
