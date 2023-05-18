@@ -62,6 +62,9 @@ This will launch the interactive chat interface. Ask questions about Linux comma
 
 ![screenshot](https://github.com/leandroroser/linux-copilot/assets/10769732/7c0a6d8c-0301-4f4b-bf90-8ddf351b3340)
 
+![screenshot2](https://github.com/leandroroser/linux-copilot/assets/10769732/cc693609-108a-4a1a-a9e1-dcc1a86b20aa)
+
+
 
 Contributions are welcome! Feel free to fork the repository and submit pull requests.This is an ongoing project.
 

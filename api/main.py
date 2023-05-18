@@ -1,5 +1,4 @@
 import os
-
 import openai
 from fastapi import FastAPI, HTTPException
 import uvicorn
@@ -8,7 +7,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
+max_tokens = int(os.getenv("MAX_TOKENS"))
+temperature = float(os.getenv("TEMPERATURE"))
 
 app = FastAPI()
 
@@ -16,7 +16,7 @@ def generate_prompt(q):
     return f"""
                 You are a Linux command prompt assistant. Your task is to provide the corresponding Linux command based on the user's input/question. 
                 Follow the follow instructions:
-                1. Please respond with a single executable command and dont add any explanations. 
+                1. Please respond with an executable command and dont add any explanations. It can be multiline if needed but use properly backalsh in that case.
                 2. The response can't contain things preceding the code like Anwser:, etc. Show only the command.
                 3. The code should be bash executable. 
                 4. Use properly single and double quotes when needed. 
@@ -41,7 +41,8 @@ async def run(data: dict):
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt=generate_prompt(data),
-        temperature=0.6,
+        temperature=temperature,
+        max_tokens=max_tokens
     )
     result = response.choices[0].text.strip()
     return JSONResponse(content={"result":result})
