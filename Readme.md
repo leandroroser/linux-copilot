@@ -60,7 +60,7 @@ make stop
 
 This will launch the interactive chat interface. Ask questions about Linux commands, and Linux Copilot will provide real-time suggestions and answers.
 
-![screenshot](https://github.com/leandroroser/linux-copilot/assets/10769732/671f0fa9-ef67-40b9-9e9c-0ac63420d33b)
+![screenshot](https://github.com/leandroroser/linux-copilot/assets/10769732/7c0a6d8c-0301-4f4b-bf90-8ddf351b3340)
 
 
 Contributions are welcome! Feel free to fork the repository and submit pull requests.This is an ongoing project.
