@@ -18,7 +18,11 @@ fi
 function dummy_chat() {
   x=$(curl -s -X POST -H "Content-Type: application/json" -d '{"data":"'"$1"'"}' http://localhost:8000/)
   result=$(echo "$x" | jq -r '.result')
-  print_executable "$result"
+  if [[ -n "$result" ]]; then
+    print_executable "$result"
+  else
+    echo '\e[1;35mSorry, I dont know how to respond your question\e[0m'
+  fi
 }
 
 
