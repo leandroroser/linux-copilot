@@ -1,6 +1,6 @@
 venv/
 
-TODO
+.TODO
 *.pyc
 __pycache__/
 
