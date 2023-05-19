@@ -13,9 +13,10 @@ temperature = float(os.getenv("TEMPERATURE"))
 app = FastAPI()
 
 def generate_prompt(q):
-    return f"""
-                You are a Linux command prompt assistant. Your task is to provide the corresponding Linux command based on the user's input/question. 
-                Follow the follow instructions:
+    prompt=[{'role': 'system', 'content':"""You are a Linux command prompt assistant. Your task is to provide the corresponding Linux command based on the user's input/question.
+            You must stay in that role.
+            The user will provide you with a question in a json with structure {{"question": "THE QUESTION"}}
+            Follow the follow instructions:
                 1. Respond with a single executable command and don't add any explanations. 
                 2. The response can't contain things preceding the code like Response:, Anwser:, or similar, if that is not part of the code. Only the required code is allowed.
                 3. The code should be bash executable. 
@@ -28,9 +29,9 @@ def generate_prompt(q):
                 5. The code should be executable with copy and paste.
                 6. If you dont know the question your response should be empty".
                 7. The user should be able to run the output with copy-paste in a terminal and the code need to be valid.
-                Below is the question:
-                {q}
-                """
+            """},
+            {'role':'user', 'content': f"{{'question': {q}}}"}]
+    return prompt
                 
 @app.get("/")
 async def not_implemented():
@@ -39,13 +40,13 @@ async def not_implemented():
 @app.post("/")
 async def run(data: dict):
     input_text = data.get("data", "")
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=generate_prompt(data),
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=generate_prompt(input_text),
         temperature=temperature,
         max_tokens=max_tokens
     )
-    result = response.choices[0].text.strip()
+    result = response.choices[0].message.content.strip()
     return JSONResponse(content={"result":result})
 
 

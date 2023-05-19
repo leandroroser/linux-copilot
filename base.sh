@@ -12,7 +12,8 @@ fi
 
 chars="/-\|"
 animation_delay=0.1
-animate() {
+
+function animate() {
   while :; do
     for ((i = 0; i < ${#chars}; i++)); do
       echo -ne "${chars:$i:1}"
