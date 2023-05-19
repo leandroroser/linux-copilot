@@ -1,6 +1,6 @@
 init:
 	python -m venv chatenv && \
-	source chatenv/bin/activate
+	source chatenv/bin/activate && \
 	pip install -r api/requirements.txt
 	chmod +x chat.sh
 	chmod +x base.sh
