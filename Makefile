@@ -3,6 +3,7 @@ init:
 	source chatenv/bin/activate
 	pip install -r api/requirements.txt
 	chmod +x chat.sh
+	chmod +x base.sh
 start:
 	python api/main.py
 
