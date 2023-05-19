@@ -7,9 +7,9 @@ An intelligent and active terminal application for Linux.
 
 
 
-Linux Copilot is a command line tool for Linux that allows users to generate Linux editable commands using GPT-3 that can be run on the fly as a regular command in the same terminal, without fancy UI, just pure Linux!
+Linux Copilot is a command-line tool for Linux that enables users to generate editable Linux commands using GPT-3. These commands can be executed on-the-fly as regular commands within the same terminal, without any fancy UI, providing a pure Linux experience!
 
-The interesting feature of this terminal is that it acts as auto-complete, allowing not only to make question but to **edit and run the responses**.
+One interesting feature of this terminal is its auto-complete functionality. It allows users not only to ask questions but also to edit and execute the generated responses.
 
 Currently, the application was tested in bash and zsh.
 
@@ -65,7 +65,7 @@ This command will start the API that is used by the chat.sh command.
 make stop
 ```
 
-3. Start chatting by running the following command:
+3. In other terminal, start using Linux-Copilot with following command:
 
 ```sh
 ./chat.sh
@@ -73,7 +73,7 @@ make stop
 
 
 
-This will launch the interactive chat interface. Ask questions about Linux commands, and Linux Copilot will provide real-time suggestions and answers.
+This will launch the interactive chat interface. Ask questions about Linux commands, and Linux Copilot will provide code answers.
 
 
 Contributions are welcome! Feel free to fork the repository and submit pull requests.This is an ongoing project.
