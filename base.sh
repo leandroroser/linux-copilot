@@ -50,8 +50,8 @@ function dummy_chat() {
   animate &
   echo "I'm thinking..."
   x=$(curl -s -X POST -H "Content-Type: application/json" -d '{"data":"'"$1"'"}' http://localhost:8000/)
-  kill $!
   result=$(echo "$x" | jq -r '.result')
+  kill $!
   if [ -n "$result" ]; then
     print_executable "$result"
   else
