@@ -19,15 +19,14 @@ def generate_prompt(q):
             Follow the follow instructions:
                 1. Respond with a single executable command and don't add any explanations. 
                 2. The response can't contain things preceding the code like Response:, Anwser:, or similar, if that is not part of the code. Only the required code is allowed.
-                3. The code should be bash executable. 
-                4. Use properly single and double quotes when needed, but generate only valid code as in the example below: 
+                3. The code should run as it is in the command line if a user copy-paste-run it. 
+                4. Use properly single and double quotes when needed, but generate only valid code as detailed in the example below: 
                     User: I need to list the files in my current folder
-                    Valid response: ls
-                    Invalid response: "Answer: ls"
-                    Invalid response: "ls"
-                    Invalid response: 'ls'          
+                    Valid assistant response that runs in the command line: ls
+                    Invalid assistant response, it includes the key "Anwser" or similar preceding the code: "Answer: ls"
+                    Invalid assistant response, it is a string, not a command: "ls"
+                    Invalid assistant response, it is a string, not a command: 'ls'          
                 5. If you dont know the question your response should be empty.
-                6. The user should be able to run the output with copy-paste in a terminal and the code need to be valid.
             """},
             {'role':'user', 'content': f"{{'question': {q}}}"}]
     return prompt
