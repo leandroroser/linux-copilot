@@ -24,7 +24,7 @@ function animate() {
 }
 
 function print_executable() {
-  echo -e "${PROMPT_MAGENTA}Press enter to run or 'q' to exit${PROMPT_RESET}"
+  echo -e "${PROMPT_MAGENTA}Press enter to run, you can edit the command. Type 'q' + enter to exit. ${PROMPT_RESET}"
   if [ "$BASH_VERSION" ]; then
     read -e -i "$1" -p ">> " command
   elif [ "$ZSH_VERSION" ]; then
@@ -35,14 +35,14 @@ function print_executable() {
   fi
 
   if [ "$command" = "q" ]; then
-    echo "${PROMPT_MAGENTA}Exiting...${PROMPT_RESET}"
+    echo -e "${PROMPT_MAGENTA}Exiting...${PROMPT_RESET}"
     exit 0
   fi
 
   if [ -n "$command" ]; then
     eval "$command"
   else
-    echo "${PROMPT_MAGENTA}Invalid input. Exiting...${PROMPT_RESET}"
+    echo -e "${PROMPT_MAGENTA}Invalid input. Exiting...${PROMPT_RESET}"
   fi
 }
 
@@ -55,13 +55,13 @@ function dummy_chat() {
   if [ -n "$result" ]; then
     print_executable "$result"
   else
-    echo -e "${PROMPT_MAGENTA}Sorry, I dont know how to respond your question${PROMPT_RESET}"
+    echo -e "${PROMPT_MAGENTA}Sorry, I dont know how to respond your question or there was an error${PROMPT_RESET}"
   fi
 }
 
 function eval_loop() {
   while true; do
-    echo -e "${PROMPT_MAGENTA}Write your question or press 'q' to exit${PROMPT_RESET}"
+    echo -e "${PROMPT_MAGENTA}Write your question or type 'q' + enter to exit${PROMPT_RESET}"
     if [ "$BASH_VERSION" ]; then
       read -r -p ">> " input
     elif [ "$ZSH_VERSION" ]; then
