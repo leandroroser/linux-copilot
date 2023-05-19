@@ -15,7 +15,7 @@ Currently, the application was tested in bash and zsh.
 
 
 Note: This is in state of proof of concept. Expect improvements with time.
-
+Note 2: For some reason (cold start?) the first query tends to fail randomly and then the rest of the queries work as expected. 
 
 ## Prerequisites
 
