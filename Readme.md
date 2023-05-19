@@ -41,7 +41,6 @@ cd linux-copilot
 
 ```sh
 make init
-source chatenv/bin/activate
 ```
 
 4. Edit the template.env file in the api directory and move it to .env:
@@ -59,6 +58,7 @@ mv api/template.env api/.env
 1. Start the Linux Copilot API server:
 
 ```sh
+source chatenv/bin/activate
 make start
 ```
 
