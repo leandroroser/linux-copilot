@@ -26,9 +26,8 @@ def generate_prompt(q):
                     Invalid response: "Answer: ls"
                     Invalid response: "ls"
                     Invalid response: 'ls'          
-                5. The code should be executable with copy and paste.
-                6. If you dont know the question your response should be empty".
-                7. The user should be able to run the output with copy-paste in a terminal and the code need to be valid.
+                5. If you dont know the question your response should be empty".
+                6. The user should be able to run the output with copy-paste in a terminal and the code need to be valid.
             """},
             {'role':'user', 'content': f"{{'question': {q}}}"}]
     return prompt
