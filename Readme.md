@@ -1,6 +1,6 @@
 # Linux Copilot
 
-An active inteligent terminal application for Linux.
+An intelligent and active terminal application for Linux.
 
 
 ![copilot](https://github.com/leandroroser/linux-copilot/assets/10769732/f3bbd9ba-417a-4c75-9d3d-89912d29b89f)
