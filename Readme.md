@@ -13,6 +13,12 @@ One interesting feature of this terminal is its auto-complete functionality. It 
 
 Currently, the application was tested in bash and zsh.
 
+
+Note 1: This is in state of proof of concept. Expect improvements with time.
+
+Note 2: It seems that the first time question after loading the api returns: /parse error: Invalid numeric literal at line 1, column 9. Keep asking, next questions will work.
+
+
 ## Prerequisites
 
 Before using Linux Copilot, ensure that you have the following prerequisites installed on your Linux system:
