@@ -15,7 +15,7 @@ app = FastAPI()
 def generate_prompt(q):
     prompt=[{'role': 'system', 'content':"""You are a Linux command prompt assistant. Your task is to provide the corresponding Linux command based on the user's input/question.
             You must stay in that role.
-            The user will provide you with a question in a json with structure {{"question": "THE QUESTION"}}
+            The user will provide you a question in a json with structure {{"question": "THE QUESTION"}}
             Follow the following instructions:
                 1. Respond with a single executable command and don't add any explanations. 
                 2. The response can't contain things preceding the code like Response:, Anwser:, or similar, if that is not part of the code. Only the required code is allowed.
@@ -26,8 +26,8 @@ def generate_prompt(q):
                     Invalid response: "Answer: ls"
                     Invalid response: "ls"
                     Invalid response: 'ls'          
-                5. If you dont know the question your response should be empty.
-                6. The user should be able to run the output with copy-paste in a terminal and the code need to be valid.
+                5. If you don't know the question your response should be empty.
+                6. The user should be able to run the output with copy-paste in a terminal and the code needs to be valid.
             """},
             {'role':'user', 'content': f"{{'question': {q}}}"}]
     return prompt
