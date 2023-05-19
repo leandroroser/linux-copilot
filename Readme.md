@@ -11,7 +11,7 @@ Linux Copilot is a command line tool for Linux that allows users to generate Lin
 
 The interesting feature of this terminal is that it acts as auto-complete, allowing not only to make question but to **edit and run the responses**.
 
-Currently the application is working well in bash ()
+Currently, the application was tested in bash and zsh.
 
 ## Prerequisites
 
